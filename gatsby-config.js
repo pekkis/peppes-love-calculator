@@ -1,9 +1,20 @@
 module.exports = {
   siteMetadata: {
-    title: "peppes-love-calculator",
+    title: "Peppe's Love Calculator",
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          'Oleo Script Swash Caps:400,700',
+          'Lora'
+        ],
+        display: 'swap'
+      }
+    },
     "gatsby-plugin-emotion",
+    "gatsby-plugin-theme-ui",
     "gatsby-plugin-sharp",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-offline",
