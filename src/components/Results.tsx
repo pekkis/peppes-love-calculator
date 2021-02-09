@@ -1,36 +1,42 @@
 /** @jsx jsx */
-import { result } from "lodash"
-import { FC } from "react"
-import {jsx, Box, Flex, Text} from "theme-ui"
+import { FC } from "react";
+import { jsx, Box, Flex, Text } from "theme-ui";
 
 type Result = {
-    percentage: number;
-    calculating: boolean;
-    calculated: boolean;
-}
+  percentage: number;
+  calculating: boolean;
+  calculated: boolean;
+};
 
 type Props = {
-    result: Result
-}
+  result: Result;
+};
 
-const Results: FC<Props> = props => {
-    const {result} = props
-    return (
-        <Flex sx={{
-            my: 3,
-            placeContent: "center",
-            height: "2em",
-            fontSize: 3
-        }}>
-            <Box sx={{
-                alignSelf: "center"
-            }}>
-                {result.calculated && <Text>
-                Match found: <span sx={{ fontWeight: "bold"}}>{result.percentage}%</span>
-                </Text>}
-            </Box>
-        </Flex>
-    )
-}
+const Results: FC<Props> = (props) => {
+  const { result } = props;
+  return (
+    <Flex
+      sx={{
+        my: 3,
+        placeContent: "center",
+        height: "2em",
+        fontSize: 3
+      }}
+    >
+      <Box
+        sx={{
+          alignSelf: "center"
+        }}
+      >
+        {result.calculated && (
+          <Text>
+            Match found:{" "}
+            <span sx={{ fontWeight: "bold" }}>{result.percentage}%</span>
+          </Text>
+        )}
+      </Box>
+    </Flex>
+  );
+};
 
-export default Results
+export default Results;
